@@ -7,8 +7,8 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
-from MLB_Review.batter_dashboard.config import TEST_CASE
-from MLB_Review.batter_dashboard.data.loader import get_game_data
+from config import TEST_CASE
+from data.loader import get_game_data
 
 
 @dataclass(frozen=True)

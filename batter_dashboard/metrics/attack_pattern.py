@@ -7,13 +7,13 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
-from MLB_Review.batter_dashboard.config import (
+from config import (
     ATTACK_PATTERN_MIN_PITCHES_1_SEASON,
     ATTACK_PATTERN_MIN_PITCHES_2_SEASONS,
     COUNT_BUCKETS,
     TEST_CASE,
 )
-from MLB_Review.batter_dashboard.data.loader import get_game_data, get_pitcher_attack_data
+from data.loader import get_game_data, get_pitcher_attack_data
 
 
 @dataclass(frozen=True)

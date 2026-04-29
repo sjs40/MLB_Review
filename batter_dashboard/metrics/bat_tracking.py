@@ -7,8 +7,8 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
-from MLB_Review.batter_dashboard.config import BAT_TRACKING_COLUMNS, TEST_CASE
-from MLB_Review.batter_dashboard.data.loader import get_baseline_data, get_bat_tracking
+from config import BAT_TRACKING_COLUMNS, TEST_CASE
+from data.loader import get_baseline_data, get_bat_tracking
 
 
 @dataclass(frozen=True)

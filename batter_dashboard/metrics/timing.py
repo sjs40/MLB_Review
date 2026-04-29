@@ -8,8 +8,8 @@ from typing import Literal
 import numpy as np
 import pandas as pd
 
-from MLB_Review.batter_dashboard.config import PITCH_CATEGORY_MAP, PULL_THRESHOLD_DEGREES, TEST_CASE
-from MLB_Review.batter_dashboard.data.loader import get_baseline_data, get_game_data
+from config import PITCH_CATEGORY_MAP, PULL_THRESHOLD_DEGREES, TEST_CASE
+from data.loader import get_baseline_data, get_game_data
 
 PitchCategory = Literal["fastball", "breaking", "offspeed"]
 

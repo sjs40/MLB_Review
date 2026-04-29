@@ -8,14 +8,14 @@ from typing import Literal
 import numpy as np
 import pandas as pd
 
-from MLB_Review.batter_dashboard.config import (
+from config import (
     DECISION_EXCLUDED_DESCRIPTIONS,
     DEFAULT_DECISION_QUALITY_METHOD,
     IN_ZONE_VALUES,
     OUT_ZONE_VALUES,
     TEST_CASE,
 )
-from MLB_Review.batter_dashboard.data.loader import get_game_data
+from data.loader import get_game_data
 
 
 @dataclass(frozen=True)
