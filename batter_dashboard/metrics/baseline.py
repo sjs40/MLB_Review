@@ -77,7 +77,8 @@ def compute_baseline_stats(pitches_df: pd.DataFrame) -> BaselineStats:
     swings_in_zone = int((pitches_df["is_swing"] & in_zone).sum())
     swings_out_zone = int((pitches_df["is_swing"] & out_zone).sum())
 
-    swings_df = pitches_df[pitches_df["is_swing"]]
+    swing_mask = pitches_df["is_swing"].fillna(False).astype(bool)
+    swings_df = pitches_df.loc[swing_mask]
 
     return BaselineStats(
         n_pitches=n_pitches,

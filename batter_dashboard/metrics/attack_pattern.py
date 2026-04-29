@@ -34,6 +34,15 @@ def _require_columns(df: pd.DataFrame, required: set[str]) -> None:
         raise ValueError(f"Missing required columns: {sorted(missing)}")
 
 
+def _ensure_required_or_empty(df: pd.DataFrame, required: set[str]) -> pd.DataFrame:
+    if required.issubset(df.columns):
+        return df
+    if df.empty:
+        return pd.DataFrame(columns=sorted(required))
+    missing = required - set(df.columns)
+    raise ValueError(f"Missing required columns: {sorted(missing)}")
+
+
 def _mix(df: pd.DataFrame) -> dict[str, float]:
     if df.empty:
         return {}
@@ -57,8 +66,8 @@ def compute_attack_pattern(
     """
     required = {"pitch_type", "balls", "strikes"}
     _require_columns(game_df, required)
-    _require_columns(pitcher_current_season_df, required)
-    _require_columns(pitcher_prior_season_df, required)
+    pitcher_current_season_df = _ensure_required_or_empty(pitcher_current_season_df, required)
+    pitcher_prior_season_df = _ensure_required_or_empty(pitcher_prior_season_df, required)
 
     out: list[CountBucketAttack] = []
     for balls, strikes in COUNT_BUCKETS:
