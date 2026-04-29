@@ -4,23 +4,23 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from MLB_Review.batter_dashboard.config import DECISION_EXCLUDED_DESCRIPTIONS
-from MLB_Review.batter_dashboard.metrics.attack_pattern import compute_attack_pattern
-from MLB_Review.batter_dashboard.metrics.baseline import (
+from config import DECISION_EXCLUDED_DESCRIPTIONS
+from metrics.attack_pattern import compute_attack_pattern
+from metrics.baseline import (
     BaselineStats,
     compute_baseline_stats,
     compute_game_vs_baseline_deltas,
 )
-from MLB_Review.batter_dashboard.metrics.bat_tracking import compute_bat_tracking_deltas
-from MLB_Review.batter_dashboard.metrics.contact_quality import (
+from metrics.bat_tracking import compute_bat_tracking_deltas
+from metrics.contact_quality import (
     extract_bip_results,
     summarize_contact_quality,
 )
-from MLB_Review.batter_dashboard.metrics.decision_quality import (
+from metrics.decision_quality import (
     compute_decision_quality,
     summarize_decision_quality,
 )
-from MLB_Review.batter_dashboard.metrics.timing import categorize_pitch_type, compute_timing_diagnostics
+from metrics.timing import categorize_pitch_type, compute_timing_diagnostics
 
 
 # === baseline.py tests ===

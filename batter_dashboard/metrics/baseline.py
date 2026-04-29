@@ -7,8 +7,8 @@ from dataclasses import asdict, dataclass
 import numpy as np
 import pandas as pd
 
-from MLB_Review.batter_dashboard.config import IN_ZONE_VALUES, OUT_ZONE_VALUES, TEST_CASE
-from MLB_Review.batter_dashboard.data.loader import get_baseline_data, get_game_data
+from config import IN_ZONE_VALUES, OUT_ZONE_VALUES, TEST_CASE
+from data.loader import get_baseline_data, get_game_data
 
 
 @dataclass(frozen=True)
