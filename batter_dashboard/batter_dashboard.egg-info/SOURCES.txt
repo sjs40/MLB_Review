@@ -21,6 +21,7 @@ metrics/decision_quality.py
 metrics/timing.py
 tests/__init__.py
 tests/test_data_layer.py
+tests/test_metrics.py
 viz/__init__.py
 viz/game_story_panel.py
 viz/headline_panel.py
