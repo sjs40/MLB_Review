@@ -3,10 +3,10 @@
 import pandas as pd
 import pytest
 
-from MLB_Review.batter_dashboard.config import CONTACT_DESCRIPTIONS, SWING_DESCRIPTIONS, TEST_CASE, WHIFF_DESCRIPTIONS
-from MLB_Review.batter_dashboard.data.loader import get_baseline_data, get_bat_tracking, get_game_data
-from MLB_Review.batter_dashboard.data.normalization import add_swing_take_classification, dedupe_pitches, filter_non_pitches
-from MLB_Review.batter_dashboard.data.run_value_matrix import get_run_value_matrix
+from config import CONTACT_DESCRIPTIONS, SWING_DESCRIPTIONS, TEST_CASE, WHIFF_DESCRIPTIONS
+from data.loader import get_baseline_data, get_bat_tracking, get_game_data
+from data.normalization import add_swing_take_classification, dedupe_pitches, filter_non_pitches
+from data.run_value_matrix import get_run_value_matrix
 
 
 def test_get_game_data_returns_expected_pitches() -> None:

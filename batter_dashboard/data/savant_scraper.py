@@ -9,7 +9,7 @@ import time
 import pandas as pd
 import requests
 
-from MLB_Review.batter_dashboard.config import LOG_FORMAT, LOG_LEVEL, TEST_CASE
+from config import LOG_FORMAT, LOG_LEVEL, TEST_CASE
 
 logging.basicConfig(format=LOG_FORMAT, level=LOG_LEVEL)
 logger = logging.getLogger(__name__)

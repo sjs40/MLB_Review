@@ -10,7 +10,7 @@ from pathlib import Path
 import pandas as pd
 from pybaseball import statcast_batter, statcast_pitcher
 
-from MLB_Review.batter_dashboard.config import CACHE_DIR, LOG_FORMAT, LOG_LEVEL, TEST_CASE
+from config import CACHE_DIR, LOG_FORMAT, LOG_LEVEL, TEST_CASE
 
 logging.basicConfig(format=LOG_FORMAT, level=LOG_LEVEL)
 logger = logging.getLogger(__name__)

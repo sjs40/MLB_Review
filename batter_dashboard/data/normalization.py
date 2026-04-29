@@ -6,7 +6,7 @@ import logging
 
 import pandas as pd
 
-from MLB_Review.batter_dashboard.config import (
+from config import (
     CONTACT_DESCRIPTIONS,
     DECISION_EXCLUDED_DESCRIPTIONS,
     LOG_FORMAT,
@@ -65,7 +65,7 @@ def normalize_pitch_data(df: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    from MLB_Review.batter_dashboard.data.pybaseball_source import fetch_batter_game
+    from data.pybaseball_source import fetch_batter_game
 
     case = TEST_CASE
     raw = fetch_batter_game(case["player_id"], case["game_date"], use_cache=True)

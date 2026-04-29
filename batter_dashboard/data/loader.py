@@ -8,10 +8,10 @@ from typing import Literal
 
 import pandas as pd
 
-from MLB_Review.batter_dashboard.config import BAT_TRACKING_COLUMNS, LOG_FORMAT, LOG_LEVEL, TEST_CASE
-from MLB_Review.batter_dashboard.data.normalization import normalize_pitch_data
-from MLB_Review.batter_dashboard.data.pybaseball_source import fetch_batter_game, fetch_batter_range, fetch_pitcher_season
-from MLB_Review.batter_dashboard.data.savant_scraper import fetch_batter_pitches_savant
+from config import BAT_TRACKING_COLUMNS, LOG_FORMAT, LOG_LEVEL, SWING_DESCRIPTIONS, TEST_CASE
+from data.normalization import normalize_pitch_data
+from data.pybaseball_source import fetch_batter_game, fetch_batter_range, fetch_pitcher_season
+from data.savant_scraper import fetch_batter_pitches_savant
 
 logging.basicConfig(format=LOG_FORMAT, level=LOG_LEVEL)
 logger = logging.getLogger(__name__)
@@ -49,7 +49,7 @@ def get_baseline_data(player_id: int, end_date: str, window: Literal["season", "
 
 
 def _bat_tracking_population(df: pd.DataFrame) -> float:
-    swings = df[df["description"].isin({"hit_into_play", "foul", "swinging_strike", "foul_tip", "swinging_strike_blocked", "foul_bunt"})]
+    swings = df[df["description"].isin(SWING_DESCRIPTIONS)]
     if swings.empty or "bat_speed" not in swings.columns:
         return 0.0
     return float(swings["bat_speed"].notna().mean())
